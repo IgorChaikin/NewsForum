@@ -1,0 +1,90 @@
+﻿@using NewsForum.Models.ObjModels
+@model News
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1> @Model.Title </h1>
+    <h3>@Model.ShortDesc</h3>
+    <img src="@Model.Img">
+    <div>
+        @Model.Desc
+    </div>
+    <div>
+        <h5>
+            Автор:
+            @Model.Author
+        </h5>
+    </div>
+    <span>@Html.ActionLink(Model.Category.Title, "GetList", "NewsList", new { id = Model.Category.Id })</span>
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (User.Identity.Name == Model.Author)
+        {
+            <span>
+                @Html.ActionLink("Редактировать", "EditForm", "EditNews", new { id = Model.Id })
+                @Html.ActionLink("Удалить", "DeleteNews", "EditNews", new { id = Model.Id })
+            </span>
+        }
+        <h5>
+            Оставить комментарий
+        </h5>
+        <form id="form-id" action="@(Url.Action("EditComments", "Comments",  new { newsId = Model.Id}))"
+              method="post">
+            <textarea style="width:90%" name="text">
+            </textarea><br />
+            <input name="date" type="hidden" id="date-id" />
+            <input type="submit" value="Опубликовать" />
+        </form>
+    }
+    <h5>Комментарии</h5>
+    <div>
+        @foreach (var item in Model.Comments)
+        {
+            <div>
+                <h6>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </h6>
+                <div>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </div>
+                
+                <div>
+                    <span style="font-size: small">
+                        @Html.DisplayFor(modelItem => item.Date)
+                        по UTC 
+                    </span>
+                    @if (User.Identity.Name == item.Author)
+                    {
+                        <span>
+                            @Html.ActionLink("Удалить", "DeleteComment", "Comments", new { newsId = Model.Id, Id = item.Id })
+                        </span>
+                    }
+                </div>
+                
+            </div>
+        }
+    </div>
+
+    <script>
+        const form = document.getElementById('form-id');
+        const date = document.getElementById('date-id');
+        form.addEventListener('submit', (event) => {
+            const dateNow = new Date();
+            date.value = `${dateNow.getFullYear()}-${
+                (dateNow.getMonth() + 1).toString().padStart(2, '0')}-${
+                dateNow.getDate().toString().padStart(2, '0')}-${
+                dateNow.getHours().toString().padStart(2, '0')}-${
+                dateNow.getMinutes().toString().padStart(2, '0')}-${
+                dateNow.getSeconds().toString().padStart(2, '0')}`;
+        })
+    </script>
+</body>
+</html>

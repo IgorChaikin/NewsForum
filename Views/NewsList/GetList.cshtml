@@ -1,0 +1,57 @@
+﻿@using NewsForum.Models.ViewModels
+@model GetListViewModel
+@{
+    ViewBag.Title = Model.PageTitle;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1> @Model.PageTitle </h1>
+    <h3>@Model.PageDesc</h3>
+    @if (User.Identity.IsAuthenticated)
+     {
+        <p>
+            @Html.ActionLink("Добавить новость", "EditForm", "EditNews")
+        </p>
+     }
+     <table style="border-collapse:separate; border-spacing:1rem" id="table-id">
+         <tr>
+             <th>Заголовок</th>
+             <th>Краткое описание</th>
+             <th>Категория</th>
+             <th>Автор</th>
+             <th>Изменено(по UTC)</th>
+             <th></th>
+         </tr>
+
+            @foreach (var item in Model.News)
+             {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShortDesc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Author)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Подробнее", "GetItem", "NewsList", new { id = item.Id })
+                    </td>
+                </tr>
+             }
+     </table>
+    </body>
+</html>
