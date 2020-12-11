@@ -15,6 +15,11 @@ using Microsoft.EntityFrameworkCore;
 using Forum.Data.Repository;
 using NewsForum.Models.AuthModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.Extensions.Logging;
+using NewsForum.Services;
+using Serilog;
+using NewsForum.Hubs;
 
 namespace NewsForum
 {
@@ -34,8 +39,9 @@ namespace NewsForum
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddTransient<IAllNews, NewsRepository>();
-            services.AddTransient<INewsCategory, CategoryRepository>();
+            services.AddSingleton<IEmailSender, EmailService>();
+            services.AddScoped<IAllNews, NewsRepository>();
+            services.AddScoped<INewsCategory, CategoryRepository>();
             services.AddTransient<IAllComments, CommentRepository>();
 
             services.AddIdentity<User, IdentityRole>()
@@ -44,18 +50,22 @@ namespace NewsForum
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddSignalR();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                //app.UseExceptionHandler("/Home/Error");
+                app.UseStatusCodePagesWithReExecute("/Error/Index", "?statusCode={0}");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
@@ -63,9 +73,13 @@ namespace NewsForum
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSerilogRequestLogging();
+
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {
@@ -96,6 +110,8 @@ namespace NewsForum
                 endpoints.MapControllerRoute(
                     name: "editComment",
                     pattern: "{controller=Comments}/{action=EditComments}/{newsId}/{id?}");
+
+                endpoints.MapHub<NewsHub>("/news");
 
                 endpoints.MapRazorPages();
             });

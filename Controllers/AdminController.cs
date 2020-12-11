@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NewsForum.Models.AuthModels;
@@ -9,6 +10,7 @@ using NewsForum.Models.ViewModels;
 
 namespace NewsForum.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AdminController : Controller
     {
         UserManager<User> _userManager;

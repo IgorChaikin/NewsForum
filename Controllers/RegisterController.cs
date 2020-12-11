@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using NewsForum.Data.Interfaces;
 using NewsForum.Models.AuthModels;
 using NewsForum.Models.ViewModels;
 using NewsForum.Services;
@@ -15,11 +16,13 @@ namespace NewsForum.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly IEmailSender _sender;
 
-        public RegisterController(UserManager<User> userManager, SignInManager<User> signInManager)
+        public RegisterController(UserManager<User> userManager, SignInManager<User> signInManager, IEmailSender sender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _sender = sender;
         }
         [HttpGet]
         public IActionResult Register()
@@ -42,8 +45,8 @@ namespace NewsForum.Controllers
                         "Register",
                         new { userId = user.Id, code = code },
                         protocol: HttpContext.Request.Scheme);
-                    EmailService emailService = new EmailService();
-                    await emailService.SendEmailAsync(model.Email, "Подтвердите аккаунт",
+                    //EmailService emailService = new EmailService();
+                    await _sender.SendEmailAsync(model.Email, "Подтвердите аккаунт",
                         $"Подтвердите действие на сайте NewsForum, перейдя по ссылке: <a href='{callbackUrl}'>link</a>");
 
                     return Content("Для завершения регистрации проверьте электронную почту и перейдите по ссылке, указанной в письме");

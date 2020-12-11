@@ -29,7 +29,7 @@
         </textarea><br />
 
         <label>Категория</label><br />
-        <select name="categoryId">
+        <select name="categoryId" id="category-list-id">
             @foreach (var item in Model.Categories)
             {
                 <option selected="@((Model.News != null) && (Model.News.Category.Id == item.Id))"
@@ -39,11 +39,17 @@
             }
         </select><br /><br />
 
-        <input type="hidden" name="date" id="date-id"/><br />
+        <input type="hidden" name="date" id="date-id" /><br />
 
         <input type="submit" value="Опубликовать" />
     </form>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
     <script>
+
+        const hubConnection = new signalR.HubConnectionBuilder()
+            .withUrl("/news")
+            .build();
+
         const form = document.getElementById('form-id');
         const date = document.getElementById('date-id');
         form.addEventListener('submit', (event) => {
@@ -54,7 +60,11 @@
                 dateNow.getHours().toString().padStart(2, '0')}-${
                 dateNow.getMinutes().toString().padStart(2, '0')}-${
                 dateNow.getSeconds().toString().padStart(2, '0')}`;
-        })
+            const lst = document.getElementById('category-list-id');
+            hubConnection.invoke("Update", "@User.Identity.Name", lst.options[lst.selectedIndex].text);
+        });
+
+        hubConnection.start();
     </script>
 </body>
 </html>

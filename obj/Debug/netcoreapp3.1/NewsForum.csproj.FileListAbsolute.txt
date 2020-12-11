@@ -452,3 +452,5 @@ E:\ASP-NET\NewsForum\bin\Debug\netcoreapp3.1\Superpower.dll
 E:\ASP-NET\NewsForum\obj\Debug\netcoreapp3.1\NewsForum.csproj.CoreCompileInputs.cache
 E:\ASP-NET\NewsForum\obj\Debug\netcoreapp3.1\NewsForum.MvcApplicationPartsAssemblyInfo.cs
 E:\ASP-NET\NewsForum\obj\Debug\netcoreapp3.1\NewsForum.MvcApplicationPartsAssemblyInfo.cache
+E:\ASP-NET\NewsForum\obj\Debug\netcoreapp3.1\Razor\Views\Error\Index.cshtml.g.cs
+E:\ASP-NET\NewsForum\bin\Debug\netcoreapp3.1\libman.json
