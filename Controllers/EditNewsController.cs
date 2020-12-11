@@ -7,6 +7,8 @@ using NewsForum.Models.ObjModels;
 using NewsForum.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
+using NewsForum.Hubs;
+using Microsoft.AspNetCore.SignalR;
 
 namespace NewsForum.Controllers
 {
@@ -14,11 +16,13 @@ namespace NewsForum.Controllers
     {
         private readonly IAllNews _allNews;
         private readonly INewsCategory _allCategories;
+        private readonly IHubContext<NewsHub> _hubContext;
 
-        public EditNewsController(IAllNews iAllNews, INewsCategory iNewsCategory)
+        public EditNewsController(IAllNews iAllNews, INewsCategory iNewsCategory, IHubContext<NewsHub> hubContext)
         {
             _allNews = iAllNews;
             _allCategories = iNewsCategory;
+            _hubContext = hubContext;
         }
 
         [HttpGet]

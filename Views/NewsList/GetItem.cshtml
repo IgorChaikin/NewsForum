@@ -37,18 +37,18 @@
             Оставить комментарий
         </h5>
         <form id="form-id" action="@(Url.Action("EditComments", "Comments",  new { newsId = Model.Id}))"
-              method="post">
-            <textarea style="width:90%" name="text">
+              method="post" >
+            <textarea style="width:90%" name="text" id="text-id">
             </textarea><br />
             <input name="date" type="hidden" id="date-id" />
-            <input type="submit" value="Опубликовать" />
+            <input type="submit" id="submit-id" value="Опубликовать" />
         </form>
     }
     <h5>Комментарии</h5>
-    <div>
+    <div id="list-id">
         @foreach (var item in Model.Comments)
         {
-            <div>
+            <div id="@item.Id">
                 <h6>
                     @Html.DisplayFor(modelItem => item.Author)
                 </h6>
@@ -76,7 +76,9 @@
     <script>
         const form = document.getElementById('form-id');
         const date = document.getElementById('date-id');
+
         form.addEventListener('submit', (event) => {
+
             const dateNow = new Date();
             date.value = `${dateNow.getFullYear()}-${
                 (dateNow.getMonth() + 1).toString().padStart(2, '0')}-${
@@ -84,7 +86,7 @@
                 dateNow.getHours().toString().padStart(2, '0')}-${
                 dateNow.getMinutes().toString().padStart(2, '0')}-${
                 dateNow.getSeconds().toString().padStart(2, '0')}`;
-        })
+        });
     </script>
 </body>
 </html>

@@ -27,8 +27,8 @@ namespace NewsForum.Controllers
                 int[] d = date.Split(new char[] { '-' }).Select(el => int.Parse(el)).ToArray();
                 if (id == null)
                 {
-                    Comment c = new Comment { Text = text, 
-                        Author = User.Identity.Name, 
+                    Comment c = new Comment { Text = text,
+                        Author = User.Identity.Name,
                         News = _allNews.getObjectNews(newsId),
 
                         Date = new DateTime(d[0], d[1], d[2], d[3], d[4], d[5])
