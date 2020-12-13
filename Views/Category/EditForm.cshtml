@@ -1,0 +1,26 @@
+﻿@using NewsForum.Models.ViewModels
+@model EditFormViewModel
+@{
+    ViewBag.Title = "Новая категория";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form action="@(Url.Action("EditForm", "Category"))"
+          method="post" id="form-id">
+
+        <label>Заголовок</label><br />
+        <input type="text" name="title" /><br />
+
+        <label>Краткое описание</label><br />
+        <input type="text" name="descr" /><br />
+
+        <input type="submit" value="Опубликовать" />
+    </form>
+</body>
+</html>

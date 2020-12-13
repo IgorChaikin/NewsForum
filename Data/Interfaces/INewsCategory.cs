@@ -9,8 +9,11 @@ namespace NewsForum.Data.Interfaces
     public interface INewsCategory
     {
         void addCategory(Category category);
+        void deleteCategory(int categoryId);
         IEnumerable<Category> AllCategories { get; }
+        IEnumerable<Category> AllCategoriesWithNews { get; }
         Category getObjectCategory(int categoryId);
+        Category getCategoryWithNews(int categoryId);
         void deleteAllCategories();
     }
 }
