@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjOHp6ASIv0KMpdDX74DLHQAAAAACAAAAAAAQZgAAAAEAACAAAAAgEJzsAFrkRwygH5l09h82uU81JHLyd/dmDUMUDsnamAAAAAAOgAAAAAIAACAAAABr9zYnmc24mzMU/91zx67SGBh0GJg9LgWmyi2euFGm+IAAAABozTCCg9lNmhND0tLj1yHR1U0i+pwj0yuGAp05CbgKYoiTvl/gA5GeSsqMlJiRMSKk2E7c/YZANiTA7z8BYahvOrJmSQe3BxJakCvppPMetO6/4s4A79k8TUWO3uyC8oXuduTvKxJf5N5OJ4ObF+xAaProquLr1dnwo1LjjQLwAEAAAABoNuoCX5zwUCndzdIOmba8Rt1HS5Bz6yZQuBN+M8RIYrifbHqTw6bnZuDr/fyVPu2LSYHhDtshukAeBwm8+OcW</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:newsforumdbserver.database.windows.net,1433%3bInitial Catalog=NewsForum_db%3bUser Id=igor%40newsforumdbserver%3bPassword=Pn22814&amp;&amp;</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="NewsForum.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:newsforumdbserver.database.windows.net,1433%3bInitial Catalog=NewsForum_db%3bUser Id=igor%40newsforumdbserver%3bPassword=Pn22814&amp;&amp;</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
