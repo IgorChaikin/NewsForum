@@ -1,0 +1,70 @@
+﻿@using NewsForum.Models.ViewModels
+@model EditFormViewModel
+@{
+    ViewBag.Title = "Новая публикация";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form action="@(Url.Action("EditForm", "EditNews",  (Model.News != null)? new { id = Model.News.Id}:null))"
+          method="post" id="form-id">
+
+        <label>Заголовок</label><br />
+        <input type="text" name="title" value="@((Model.News!=null)?Model.News.Title:"")" /><br />
+
+        <label>Краткое описание</label><br />
+        <input type="text" name="shortDescr" value="@((Model.News!=null)?Model.News.ShortDesc:"")" /><br />
+
+        <label>Url изображения</label><br />
+        <input type="text" name="img" value="@((Model.News!=null)?Model.News.Img:"")" /><br />
+
+        <label>Статья</label><br />
+        <textarea style="width:90%" name="descr">
+            @((Model.News!=null)?Model.News.Desc:"")
+        </textarea><br />
+
+        <label>Категория</label><br />
+        <select name="categoryId" id="category-list-id">
+            @foreach (var item in Model.Categories)
+            {
+                <option selected="@((Model.News != null) && (Model.News.Category.Id == item.Id))"
+                        value="@item.Id.ToString()">
+                    @item.Title
+                </option>
+            }
+        </select><br /><br />
+
+        <input type="hidden" name="date" id="date-id" /><br />
+
+        <input type="submit" value="Опубликовать" />
+    </form>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script>
+
+        const hubConnection = new signalR.HubConnectionBuilder()
+            .withUrl("/news")
+            .build();
+
+        const form = document.getElementById('form-id');
+        const date = document.getElementById('date-id');
+        form.addEventListener('submit', (event) => {
+            const dateNow = new Date();
+            date.value = `${dateNow.getFullYear()}-${
+                (dateNow.getMonth() + 1).toString().padStart(2, '0')}-${
+                dateNow.getDate().toString().padStart(2, '0')}-${
+                dateNow.getHours().toString().padStart(2, '0')}-${
+                dateNow.getMinutes().toString().padStart(2, '0')}-${
+                dateNow.getSeconds().toString().padStart(2, '0')}`;
+            const lst = document.getElementById('category-list-id');
+            hubConnection.invoke("Update", "@User.Identity.Name", lst.options[lst.selectedIndex].text);
+        });
+
+        hubConnection.start();
+    </script>
+</body>
+</html>
