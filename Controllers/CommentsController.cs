@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NewsForum.Data.Interfaces;
+using NewsForum.Models.AuthModels;
 using NewsForum.Models.ObjModels;
 
 namespace NewsForum.Controllers
@@ -12,11 +14,13 @@ namespace NewsForum.Controllers
     {
         private readonly IAllComments _allComments;
         private readonly IAllNews _allNews;
+        private UserManager<User> _userManager;
 
-        public CommentsController(IAllComments iAllComments, IAllNews iAllNews)
+        public CommentsController(IAllComments iAllComments, IAllNews iAllNews, UserManager<User> userManager)
         {
             _allComments = iAllComments;
             _allNews = iAllNews;
+            _userManager = userManager;
         }
 
         [HttpPost]
@@ -31,8 +35,13 @@ namespace NewsForum.Controllers
                         Author = User.Identity.Name,
                         News = _allNews.getObjectNews(newsId),
 
-                        Date = new DateTime(d[0], d[1], d[2], d[3], d[4], d[5])
-                        .ToUniversalTime().ToString()
+                        Date = new DateTime(d[0], d[1], d[2], d[3], d[4], d[5]).AddHours(
+                        -(
+                            _userManager
+                            .FindByNameAsync(User.Identity.Name)
+                            .Result.TimeZoneOffset
+                        )
+                    ),
                     };
                     _allComments.addComment(c);
 

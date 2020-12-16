@@ -34,7 +34,7 @@ namespace NewsForum.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = new User { Email = model.Email, UserName = model.UserName, Year = model.Year };
+                User user = new User { Email = model.Email, UserName = model.UserName, Year = model.Year, TimeZoneOffset = model.TimeZoneOffset};
                 // adding user
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

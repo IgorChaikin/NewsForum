@@ -25,7 +25,7 @@
             <th>Краткое описание</th>
             <th>Категория</th>
             <th>Автор</th>
-            <th>Изменено(по UTC)</th>
+            <th>Изменено @(Model.Offset != null ? "" : "(по UTC)")</th>
             <th></th>
         </tr>
 
@@ -45,7 +45,7 @@
                     @Html.DisplayFor(modelItem => item.Author)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Date)
+                    @item.Date.AddHours(Model.Offset != null ? (int)Model.Offset : 0).ToString("dd.MM.yyyy HH:mm")
                 </td>
                 <td>
                     @Html.ActionLink("Подробнее", "GetItem", "NewsList", new { id = item.Id })

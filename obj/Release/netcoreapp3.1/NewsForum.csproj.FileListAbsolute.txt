@@ -458,3 +458,5 @@ E:\ASP-NET\NewsForum\obj\Release\netcoreapp3.1\staticwebassets\NewsForum.StaticW
 E:\ASP-NET\NewsForum\obj\Release\netcoreapp3.1\NewsForum.dll
 E:\ASP-NET\NewsForum\obj\Release\netcoreapp3.1\NewsForum.pdb
 E:\ASP-NET\NewsForum\obj\Release\netcoreapp3.1\NewsForum.genruntimeconfig.cache
+E:\ASP-NET\NewsForum\obj\Release\netcoreapp3.1\Razor\Views\Category\EditForm.cshtml.g.cs
+E:\ASP-NET\NewsForum\obj\Release\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs

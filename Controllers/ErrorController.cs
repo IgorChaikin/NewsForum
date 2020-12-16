@@ -24,18 +24,8 @@ namespace NewsForum.Controllers
                         case 401: context.Description += " Не авторизован."; break;
                         case 403: context.Description += " Доступ запрещён."; break;
                         case 404: context.Description += " Запрашиваемый ресурс не найден."; break;
+                        case 405: context.Description += " Неизвестный метод запроса."; break;
                         case 409: context.Description += " Конфликт запроса с текущим состоянием сервера."; break;
-                        default: break;
-                    }
-                }
-
-                if ((int)statusCode >= 500)
-                {
-                    context.Description = "Ошибка сервера.";
-                    switch ((int)statusCode)
-                    {
-                        case 502: context.Description += " Недопустимый ответ сервера."; break;
-                        case 503: context.Description += " Сервис временно недоступен."; break;
                         default: break;
                     }
                 }

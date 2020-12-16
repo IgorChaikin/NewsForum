@@ -1,0 +1,559 @@
+2020-12-16T19:41:24.5335985+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2020-12-16T19:41:24.7119826+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2020-12-16T19:41:24.7164268+03:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2020-12-16T19:41:24.7168160+03:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Production"
+2020-12-16T19:41:24.7170771+03:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\ASP-NET\NewsForum"
+2020-12-16T19:41:34.7695858+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/" responded 302 in 1986.1883 ms
+2020-12-16T19:41:38.8002683+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:41:39.3306570+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (556ms).
+2020-12-16T19:41:52.7146343+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:41:53.7353621+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1,018"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:41:53.7857754+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:41:53.9906352+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/GetList" responded 200 in 18976.4062 ms
+2020-12-16T19:41:55.8810016+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/news/negotiate?negotiateVersion=1" responded 200 in 169.7286 ms
+2020-12-16T19:43:58.7681227+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/Register/Register" responded 200 in 224.5258 ms
+2020-12-16T19:43:58.8276546+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/news?id=-xEfcJzyYSgBD84KCuZkbA" responded 101 in 122912.5545 ms
+2020-12-16T19:44:22.4333000+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:44:22.4349650+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (1ms).
+2020-12-16T19:44:22.4868173+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:44:22.6947344+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("241"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:44:22.7071727+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:44:23.0230959+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:44:23.0241875+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (1ms).
+2020-12-16T19:44:23.0268776+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = Boolean), @p15='?' (Size = 256), @p16='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TimeZoneOffset], [TwoFactorEnabled], [UserName], [Year])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);"
+2020-12-16T19:44:23.1209940+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("95"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = Boolean), @p15='?' (Size = 256), @p16='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TimeZoneOffset], [TwoFactorEnabled], [UserName], [Year])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);"
+2020-12-16T19:44:23.1274832+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:44:26.3686080+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/Register/Register" responded 200 in 4389.9926 ms
+2020-12-16T19:44:58.7535533+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:44:58.7550527+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (1ms).
+2020-12-16T19:44:58.7564347+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-12-16T19:44:58.7634281+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("7"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0"
+2020-12-16T19:44:58.8102666+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:44:58.8697949+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:44:58.8708146+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (1ms).
+2020-12-16T19:44:58.8721107+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:44:58.8792072+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("7"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:44:58.8824953+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:44:58.9095376+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:44:58.9109922+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (1ms).
+2020-12-16T19:44:58.9129319+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (DbType = Boolean), @p14='?' (Size = 256), @p15='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TimeZoneOffset] = @p12, [TwoFactorEnabled] = @p13, [UserName] = @p14, [Year] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;"
+2020-12-16T19:44:58.9729017+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("60"ms) [Parameters=["@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Int32), @p13='?' (DbType = Boolean), @p14='?' (Size = 256), @p15='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TimeZoneOffset] = @p12, [TwoFactorEnabled] = @p13, [UserName] = @p14, [Year] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;"
+2020-12-16T19:44:58.9848292+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:44:58.9903559+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/Register/ConfirmEmail?userId=3818683a-1716-42ff-9f94-0d649504e874&code=CfDJ8ENxpe6Y9kFIr1EwQgh3Y4wNiMhJ5r1vaFvN5lU1bxYcFqV3mF4LnoXhIFWpgxv4N3xJe2j5XmU5ibWV%2BOoWLDFG2xCi%2B7k%2FPhTHwwDaiCvJkRDAW8qdjPAPF2nrHPyxWb7Leh3LP4FI19RzWO9ViixRKR1vzd8wyk0nMfhA8vwmQQn8cN0hvc%2BvhcgbHAlOBtb%2BhPq34H%2Fw8CxrmKZFy%2B9bhycE85x39b%2FU042OMUm%2F48c0nSY3VZLFD8MqyuS78A%3D%3D" responded 302 in 330.9270 ms
+2020-12-16T19:44:59.0142994+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/" responded 302 in 0.7702 ms
+2020-12-16T19:44:59.0320481+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:44:59.0327387+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:44:59.0339744+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:44:59.0390549+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:44:59.0409766+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:44:59.0438360+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/GetList" responded 200 in 22.3699 ms
+2020-12-16T19:44:59.4170536+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/news/negotiate?negotiateVersion=1" responded 200 in 1.0688 ms
+2020-12-16T19:45:02.0524891+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/Register/Register" responded 200 in 6.8952 ms
+2020-12-16T19:45:02.0632328+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/news?id=0vVjTXzYiQcEFSXMj8OFTw" responded 101 in 2588.1305 ms
+2020-12-16T19:45:05.4548464+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/Register/Login" responded 200 in 40.7447 ms
+2020-12-16T19:45:15.0948547+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:15.0960370+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (1ms).
+2020-12-16T19:45:15.0969357+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:15.1009076+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:15.1029759+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:15.1474912+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:15.1480988+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:15.1491117+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:15.1512676+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:15.1527934+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:15.2668466+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:15.2674997+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:15.2683952+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-12-16T19:45:15.2710329+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2020-12-16T19:45:15.2865337+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:15.3299230+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:15.3308103+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:15.3332657+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-12-16T19:45:15.3358551+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2020-12-16T19:45:15.3372727+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:15.3881717+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/Register/Login" responded 302 in 322.6236 ms
+2020-12-16T19:45:15.4443967+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/" responded 302 in 0.1875 ms
+2020-12-16T19:45:15.4514598+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:15.4519257+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:15.4530929+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:15.4554712+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:15.4601027+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:15.4781690+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:15.4786351+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:15.4795418+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:15.4807854+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:15.4816900+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:15.4843450+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/GetList" responded 200 in 34.5009 ms
+2020-12-16T19:45:15.5356138+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/news/negotiate?negotiateVersion=1" responded 200 in 0.6792 ms
+2020-12-16T19:45:21.1584877+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:21.1593946+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:21.1611447+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Desc], [c].[Title]
+FROM [Categories] AS [c]"
+2020-12-16T19:45:21.1806172+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Desc], [c].[Title]
+FROM [Categories] AS [c]"
+2020-12-16T19:45:21.1960670+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:21.2330560+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/EditNews/EditForm" responded 200 in 85.6369 ms
+2020-12-16T19:45:21.2445474+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/news?id=7EXFBkESrxEXPiR3Mv1RsA" responded 101 in 5674.6000 ms
+2020-12-16T19:45:21.2912039+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/news/negotiate?negotiateVersion=1" responded 200 in 0.3802 ms
+2020-12-16T19:45:36.4252299+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:36.4262541+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (1ms).
+2020-12-16T19:45:36.4271837+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__categoryId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[Id], [c].[Desc], [c].[Title]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__categoryId_0"
+2020-12-16T19:45:36.4295645+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__categoryId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[Id], [c].[Desc], [c].[Title]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__categoryId_0"
+2020-12-16T19:45:36.4309927+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:36.4319037+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:36.4323222+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:36.4331578+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:36.4388741+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:36.4417886+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:36.4962956+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:36.4970077+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:36.4980705+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [News] ([Author], [CategoryId], [Date], [Desc], [Img], [ShortDesc], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [News]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2020-12-16T19:45:36.6254331+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("127"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [News] ([Author], [CategoryId], [Date], [Desc], [Img], [ShortDesc], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [News]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2020-12-16T19:45:36.8059786+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:36.8100088+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/EditNews/EditForm" responded 302 in 488.5179 ms
+2020-12-16T19:45:36.8228061+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:36.8233565+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:36.8241957+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:36.8282104+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:36.8296422+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:36.8309086+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:36.8313063+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:36.8319951+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:36.8343085+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:37.5489962+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:38.3062943+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/news?id=K7eIRPSPZPKsVXX33mdRwQ" responded 101 in 16972.1887 ms
+2020-12-16T19:45:45.8916259+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:45.8933999+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (1ms).
+2020-12-16T19:45:45.8948932+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:45.8982133+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:45.9006166+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:45.9024976+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:45.9028827+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:45.9035236+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:45.9047815+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:45.9460311+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:46.6961964+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:46.6974832+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (1ms).
+2020-12-16T19:45:46.6987405+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:46.7032425+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:46.7067604+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:46.7093282+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:46.7099752+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:46.7107757+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:46.7123441+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:46.7635927+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:47.3073503+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:47.3081164+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:47.3098128+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:47.3130864+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:47.3160663+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:47.3191563+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:47.3195074+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:47.3203645+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:47.3231581+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:47.3734511+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:47.9706999+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:47.9715453+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:47.9730390+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:47.9763317+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:47.9781861+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:47.9798232+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:47.9801879+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:47.9809686+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:47.9825645+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:48.0243753+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:53.1964864+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:53.1977839+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (1ms).
+2020-12-16T19:45:53.2004418+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:53.2066953+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:53.2099821+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:53.2121906+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:53.2158875+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (3ms).
+2020-12-16T19:45:53.2173522+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:53.2185070+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:53.2609512+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:53.8817007+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:53.8832645+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (1ms).
+2020-12-16T19:45:53.8857941+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:53.8914606+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:53.8936831+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:53.8953934+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:53.8984940+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (3ms).
+2020-12-16T19:45:53.9002264+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:53.9016087+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:53.9421573+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:54.5055447+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:54.5065082+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:54.5075112+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Desc], [c].[Title]
+FROM [Categories] AS [c]"
+2020-12-16T19:45:54.5086609+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Desc], [c].[Title]
+FROM [Categories] AS [c]"
+2020-12-16T19:45:54.5100262+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:54.5153540+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/EditNews/EditForm" responded 200 in 12.6982 ms
+2020-12-16T19:45:54.6070236+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/news/negotiate?negotiateVersion=1" responded 200 in 0.4729 ms
+2020-12-16T19:45:57.0032426+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:57.0041408+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:57.0055449+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__categoryId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[Id], [c].[Desc], [c].[Title]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__categoryId_0"
+2020-12-16T19:45:57.0075543+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__categoryId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[Id], [c].[Desc], [c].[Title]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__categoryId_0"
+2020-12-16T19:45:57.0088396+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:57.0096619+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:57.0101146+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:57.0119063+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:57.0150730+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:57.0167456+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:57.0195997+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:57.0200169+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:57.0262545+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [News] ([Author], [CategoryId], [Date], [Desc], [Img], [ShortDesc], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [News]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2020-12-16T19:45:57.0285224+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [News] ([Author], [CategoryId], [Date], [Desc], [Img], [ShortDesc], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [News]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2020-12-16T19:45:57.0318471+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:57.0491219+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/EditNews/EditForm" responded 302 in 49.7249 ms
+2020-12-16T19:45:57.0568178+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:57.0572456+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:57.0583296+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:57.0620470+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TimeZoneOffset], [a].[TwoFactorEnabled], [a].[UserName], [a].[Year]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2020-12-16T19:45:57.0641604+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:57.0655390+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T19:45:57.0659664+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (0ms).
+2020-12-16T19:45:57.0669533+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:57.0722044+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T19:45:57.1198930+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T19:45:57.1942528+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/news?id=i07rupwLEnGjr8pBUXbuJQ" responded 101 in 2549.3760 ms
+2020-12-16T20:43:40.1532440+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2020-12-16T20:43:40.2870716+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2020-12-16T20:43:40.2901050+03:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2020-12-16T20:43:40.2905216+03:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Production"
+2020-12-16T20:43:40.2908000+03:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\ASP-NET\NewsForum"
+2020-12-16T20:43:41.8261832+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/" responded 302 in 102.5447 ms
+2020-12-16T20:43:42.8826149+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T20:43:42.9160227+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (34ms).
+2020-12-16T20:43:43.5739148+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T20:43:43.7638016+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("190"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T20:43:43.8683685+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T20:43:43.9114224+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/GetList" responded 200 in 2064.3671 ms
+2020-12-16T20:43:44.0310070+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/news/negotiate?negotiateVersion=1" responded 200 in 12.2977 ms
+2020-12-16T20:43:48.4442224+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/news?id=Z8Xol7QbyFDd5CztpDgp8w" responded 101 in 4363.4251 ms
+2020-12-16T20:44:29.9189115+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2020-12-16T20:44:30.0014090+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2020-12-16T20:44:30.0051847+03:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2020-12-16T20:44:30.0055246+03:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Production"
+2020-12-16T20:44:30.0058410+03:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\ASP-NET\NewsForum"
+2020-12-16T20:44:32.1789946+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/" responded 302 in 169.6537 ms
+2020-12-16T20:44:34.3491945+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T20:44:34.3935852+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (47ms).
+2020-12-16T20:44:35.1168079+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T20:44:35.3204684+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("206"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T20:44:35.4447245+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T20:44:35.4949434+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/GetList" responded 200 in 2673.7876 ms
+2020-12-16T20:44:35.6776380+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/news/negotiate?negotiateVersion=1" responded 200 in 16.1649 ms
+2020-12-16T20:44:40.3041611+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/news?id=08zv_Cy18b9d92Xw_OKzUA" responded 101 in 4574.4805 ms
+2020-12-16T20:45:02.3403735+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2020-12-16T20:45:02.3984840+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2020-12-16T20:45:02.4010930+03:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2020-12-16T20:45:02.4013551+03:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Production"
+2020-12-16T20:45:02.4015917+03:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\ASP-NET\NewsForum"
+2020-12-16T20:45:04.4569387+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/" responded 302 in 139.3842 ms
+2020-12-16T20:45:06.2713476+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T20:45:06.3175421+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (47ms).
+2020-12-16T20:45:06.9957363+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T20:45:07.1469220+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("151"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T20:45:07.2606982+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T20:45:07.3129979+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/GetList" responded 200 in 2584.7315 ms
+2020-12-16T20:45:07.4594194+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/news/negotiate?negotiateVersion=1" responded 200 in 12.8544 ms
+2020-12-16T20:45:17.2786624+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/news?id=T4tGK3u_HkcBgQhteEVJEA" responded 101 in 9762.9186 ms
+2020-12-16T20:47:13.2369113+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2020-12-16T20:47:13.2941288+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2020-12-16T20:47:13.2968541+03:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2020-12-16T20:47:13.2971313+03:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Production"
+2020-12-16T20:47:13.2973683+03:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\ASP-NET\NewsForum"
+2020-12-16T20:47:15.0860035+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/" responded 302 in 116.7781 ms
+2020-12-16T20:47:16.1490904+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T20:47:16.1873203+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (38ms).
+2020-12-16T20:47:16.7723557+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T20:47:16.9822583+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("212"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T20:47:17.0882853+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T20:47:17.1291324+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/GetList" responded 200 in 2021.4803 ms
+2020-12-16T20:47:17.2746967+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/news/negotiate?negotiateVersion=1" responded 200 in 10.6404 ms
+2020-12-16T20:47:27.2691006+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/G" responded 404 in 1.4206 ms
+2020-12-16T20:47:27.3112676+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/G" responded 404 in 16.1993 ms
+2020-12-16T20:47:27.3449922+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/news?id=n8QsdRV4m-APAAt7sK-g9g" responded 101 in 10037.4341 ms
+2020-12-16T20:47:43.4735829+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/G" responded 404 in 0.1532 ms
+2020-12-16T20:47:43.4810582+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/G" responded 404 in 5.6274 ms
+2020-12-16T20:47:44.3497508+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/G" responded 404 in 0.5623 ms
+2020-12-16T20:47:44.3598538+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/G" responded 404 in 7.6945 ms
+2020-12-16T20:55:39.8032246+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2020-12-16T20:55:39.9007303+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2020-12-16T20:55:39.9050544+03:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2020-12-16T20:55:39.9055486+03:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Production"
+2020-12-16T20:55:39.9058681+03:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\ASP-NET\NewsForum"
+2020-12-16T20:55:41.5694910+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/" responded 302 in 88.5538 ms
+2020-12-16T20:55:42.6460206+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-16T20:55:42.6800152+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (34ms).
+2020-12-16T20:55:46.7140909+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T20:55:46.8616901+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("143"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-16T20:55:46.9669179+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-16T20:55:47.0321695+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/GetList" responded 200 in 5396.5266 ms
+2020-12-16T20:55:47.3494919+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/news/negotiate?negotiateVersion=1" responded 200 in 10.4345 ms
+2020-12-16T20:55:56.1133630+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/Admin" responded 302 in 6.7085 ms
+2020-12-16T20:55:56.1216960+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/Account/Login?ReturnUrl=%2FAdmin" responded 404 in 0.5280 ms
+2020-12-16T20:55:56.1521997+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/Account/Login?ReturnUrl=%2FAdmin" responded 404 in 29.0819 ms
+2020-12-16T20:55:56.1804214+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/news?id=2bGTOXnKjYujQ-94YcbQDw" responded 101 in 8786.5975 ms

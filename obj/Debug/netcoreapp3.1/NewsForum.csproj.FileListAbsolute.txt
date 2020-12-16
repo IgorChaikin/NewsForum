@@ -456,3 +456,7 @@ E:\ASP-NET\NewsForum\obj\Debug\netcoreapp3.1\NewsForum.MvcApplicationPartsAssemb
 E:\ASP-NET\NewsForum\obj\Debug\netcoreapp3.1\NewsForum.MvcApplicationPartsAssemblyInfo.cache
 E:\ASP-NET\NewsForum\obj\Debug\netcoreapp3.1\Razor\Views\Category\EditForm.cshtml.g.cs
 E:\ASP-NET\NewsForum\obj\Debug\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs
+E:\ASP-NET\NewsForum\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\NewsForum20201213141424 - Web Deploy\profile.arm.json
+E:\ASP-NET\NewsForum\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
+E:\ASP-NET\NewsForum\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.NewsForum20201213141424 - Web Deploy.json
+E:\ASP-NET\NewsForum\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\NewsForum20201213141424 - Web Deploy\mssql1.arm.json

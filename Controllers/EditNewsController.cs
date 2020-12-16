@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
 using NewsForum.Hubs;
 using Microsoft.AspNetCore.SignalR;
+using NewsForum.Models.AuthModels;
+using Microsoft.AspNetCore.Identity;
 
 namespace NewsForum.Controllers
 {
@@ -17,12 +19,14 @@ namespace NewsForum.Controllers
         private readonly IAllNews _allNews;
         private readonly INewsCategory _allCategories;
         private readonly IHubContext<NewsHub> _hubContext;
+        private UserManager<User> _userManager;
 
-        public EditNewsController(IAllNews iAllNews, INewsCategory iNewsCategory, IHubContext<NewsHub> hubContext)
+        public EditNewsController(IAllNews iAllNews, INewsCategory iNewsCategory, IHubContext<NewsHub> hubContext, UserManager<User> userManager)
         {
             _allNews = iAllNews;
             _allCategories = iNewsCategory;
             _hubContext = hubContext;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -54,8 +58,13 @@ namespace NewsForum.Controllers
                     Desc = descr,
                     Category = _allCategories.getObjectCategory(int.Parse(categoryId)),
 
-                    Date = new DateTime(d[0], d[1], d[2], d[3], d[4], d[5])
-                    .ToUniversalTime().ToString(),
+                    Date = new DateTime(d[0], d[1], d[2], d[3], d[4], d[5]).AddHours(
+                        -(
+                            _userManager
+                            .FindByNameAsync(User.Identity.Name)
+                            .Result.TimeZoneOffset
+                        )
+                    ),
                     
                     Author = User.Identity.IsAuthenticated ? User.Identity.Name : ""
                 };

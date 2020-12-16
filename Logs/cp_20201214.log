@@ -1,0 +1,22 @@
+2020-12-14T16:56:23.4122185+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2020-12-14T16:56:23.5750649+03:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2020-12-14T16:56:23.5787537+03:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2020-12-14T16:56:23.5790643+03:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Production"
+2020-12-14T16:56:23.5793387+03:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\ASP-NET\NewsForum"
+2020-12-14T16:56:26.0537288+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/" responded 302 in 228.7180 ms
+2020-12-14T16:56:27.6964413+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Creating DbCommand for '"ExecuteReader"'.
+2020-12-14T16:56:27.7748124+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Created DbCommand for '"ExecuteReader"' (78ms).
+2020-12-14T16:56:28.0911404+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-14T16:56:28.1237536+03:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("34"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [n].[Id], [n].[Author], [n].[CategoryId], [n].[Date], [n].[Desc], [n].[Img], [n].[ShortDesc], [n].[Title], [c].[Id], [c].[Desc], [c].[Title]
+FROM [News] AS [n]
+LEFT JOIN [Categories] AS [c] ON [n].[CategoryId] = [c].[Id]"
+2020-12-14T16:56:28.1363701+03:00 [DBG] (Microsoft.EntityFrameworkCore.Database.Command) A data reader was disposed.
+2020-12-14T16:56:28.2147838+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/NewsList/GetList" responded 200 in 2110.6549 ms
+2020-12-14T16:56:28.9814787+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/news/negotiate?negotiateVersion=1" responded 200 in 52.3182 ms
+2020-12-14T16:56:34.6515627+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/Register/Login" responded 200 in 169.1301 ms
+2020-12-14T16:56:34.6862625+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/news?id=XrWhf0xz0o1wNAqKcWbM8g" responded 101 in 5654.9576 ms
+2020-12-14T16:56:37.5152701+03:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/Register/Register" responded 200 in 106.6409 ms

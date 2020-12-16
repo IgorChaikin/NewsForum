@@ -1,7 +1,7 @@
-﻿@using NewsForum.Models.ObjModels
-@model News
+﻿@using NewsForum.Models.ViewModels
+@model GetItemViewModel
 @{
-    ViewBag.Title = Model.Title;
+    ViewBag.Title = Model.News.Title;
 }
 
 <!DOCTYPE html>
@@ -11,32 +11,32 @@
     <title></title>
 </head>
 <body>
-    <h1> @Model.Title </h1>
-    <h3>@Model.ShortDesc</h3>
-    <img src="@Model.Img">
+    <h1> @Model.News.Title </h1>
+    <h3>@Model.News.ShortDesc</h3>
+    <img src="@Model.News.Img">
     <div>
-        @Model.Desc
+        @Model.News.Desc
     </div>
     <div>
         <h5>
             Автор:
-            @Model.Author
+            @Model.News.Author
         </h5>
     </div>
-    <span>@Html.ActionLink(Model.Category.Title, "GetList", "NewsList", new { id = Model.Category.Id })</span>
+    <span>@Html.ActionLink(Model.News.Category.Title, "GetList", "NewsList", new { id = Model.News.Category.Id })</span>
     @if (User.Identity.IsAuthenticated)
     {
-        if (User.Identity.Name == Model.Author)
+        if (User.Identity.Name == Model.News.Author)
         {
             <span>
-                @Html.ActionLink("Редактировать", "EditForm", "EditNews", new { id = Model.Id })
-                @Html.ActionLink("Удалить", "DeleteNews", "EditNews", new { id = Model.Id })
+                @Html.ActionLink("Редактировать", "EditForm", "EditNews", new { id = Model.News.Id })
+                @Html.ActionLink("Удалить", "DeleteNews", "EditNews", new { id = Model.News.Id })
             </span>
         }
         <h5>
             Оставить комментарий
         </h5>
-        <form id="form-id" action="@(Url.Action("EditComments", "Comments",  new { newsId = Model.Id}))"
+        <form id="form-id" action="@(Url.Action("EditComments", "Comments",  new { newsId = Model.News.Id}))"
               method="post" >
             <textarea style="width:90%" name="text" id="text-id">
             </textarea><br />
@@ -46,7 +46,7 @@
     }
     <h5>Комментарии</h5>
     <div id="list-id">
-        @foreach (var item in Model.Comments)
+        @foreach (var item in Model.News.Comments)
         {
             <div id="@item.Id">
                 <h6>
@@ -58,13 +58,13 @@
                 
                 <div>
                     <span style="font-size: small">
-                        @Html.DisplayFor(modelItem => item.Date)
-                        по UTC 
+                        @((Model.Offset != null ? item.Date.AddHours((int)Model.Offset) : item.Date).ToString("dd.MM.yyyy HH:mm"))
+                        @(Model.Offset != null ? "" : "(по UTC)") 
                     </span>
                     @if (User.Identity.Name == item.Author)
                     {
                         <span>
-                            @Html.ActionLink("Удалить", "DeleteComment", "Comments", new { newsId = Model.Id, Id = item.Id })
+                            @Html.ActionLink("Удалить", "DeleteComment", "Comments", new { newsId = Model.News.Id, Id = item.Id })
                         </span>
                     }
                 </div>

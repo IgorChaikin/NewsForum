@@ -8,6 +8,7 @@ namespace NewsForum.Models.AuthModels
 {
     public class User : IdentityUser
     {
+        public int TimeZoneOffset { get; set; }
         public int Year { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace NewsForum.Models.ObjModels
         public string ShortDesc { get; set; }
         public string Desc { get; set; }
         public string Author { get; set; }
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
         public int? CategoryId { get; set; }
         public Category Category { get; set; }
 

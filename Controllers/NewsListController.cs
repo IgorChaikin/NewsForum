@@ -11,6 +11,8 @@ using NewsForum.Data.Interfaces;
 using NewsForum.Models.ObjModels;
 using Microsoft.AspNetCore.SignalR;
 using NewsForum.Hubs;
+using Microsoft.AspNetCore.Identity;
+using NewsForum.Models.AuthModels;
 
 namespace NewsForum.Controllers
 {
@@ -19,12 +21,14 @@ namespace NewsForum.Controllers
         private readonly IAllNews _allNews;
         private readonly INewsCategory _allCategories;
         private readonly IHubContext<NewsHub> _hubContext;
+        private readonly UserManager<User> _userManager;
 
-        public NewsListController(IAllNews iAllNews, INewsCategory iNewsCategory, IHubContext<NewsHub> hubContext)
+        public NewsListController(IAllNews iAllNews, INewsCategory iNewsCategory, IHubContext<NewsHub> hubContext, UserManager<User> userManager)
         {
             _allNews = iAllNews;
             _allCategories = iNewsCategory;
             _hubContext = hubContext;
+            _userManager = userManager;
         }
 
         // Print all news
@@ -33,6 +37,11 @@ namespace NewsForum.Controllers
             
 
             GetListViewModel context = new GetListViewModel();
+
+            context.Offset = User.Identity.IsAuthenticated ? (int?)_userManager
+                            .FindByNameAsync(User.Identity.Name)
+                            .Result.TimeZoneOffset : null; 
+
             if (Id == null)
             {
                 context.PageTitle = "Последние новости";
@@ -51,9 +60,15 @@ namespace NewsForum.Controllers
         }
         public ActionResult GetItem(int Id)
         {
-            News news = _allNews.getObjectNews(Id);
+            GetItemViewModel context = new GetItemViewModel();
 
-            return View(news);
+            context.Offset = User.Identity.IsAuthenticated ? (int?)_userManager
+                            .FindByNameAsync(User.Identity.Name)
+                            .Result.TimeZoneOffset : null;
+
+            context.News = _allNews.getObjectNews(Id);
+
+            return View(context);
         }
     }
 }

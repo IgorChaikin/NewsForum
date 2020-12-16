@@ -8,6 +8,7 @@ namespace NewsForum.Models.ViewModels
 {
     public class GetListViewModel
     {
+        public int? Offset { get; set; }
         public string PageTitle { get; set; }
         public string PageDesc { get; set; }
         public IEnumerable<News> News { get; set; }

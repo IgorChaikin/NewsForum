@@ -21,6 +21,10 @@ namespace NewsForum.Models.ViewModels
         public int Year { get; set; }
 
         [Required]
+        [Display(Name = "Часовой пояс")]
+        public int TimeZoneOffset { get; set; }
+
+        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
         public string Password { get; set; }
