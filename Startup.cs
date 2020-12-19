@@ -52,6 +52,10 @@ namespace NewsForum
             services.AddRazorPages();
             services.AddSignalR();
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Register/Login";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

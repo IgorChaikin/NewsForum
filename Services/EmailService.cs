@@ -1,4 +1,5 @@
 ﻿using MailKit.Net.Smtp;
+using Microsoft.Extensions.Configuration;
 using MimeKit;
 using NewsForum.Data.Interfaces;
 using System;
@@ -10,11 +11,16 @@ namespace NewsForum.Services
 {
     public class EmailService: IEmailSender
     {
+        public IConfiguration Configuration { get; }
+        public EmailService(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         public async Task SendEmailAsync(string email, string subject, string message)
         {
             var emailMessage = new MimeMessage();
 
-            emailMessage.From.Add(new MailboxAddress("Администрация сайта", "ighor.chaikin@gmail.com"));
+            emailMessage.From.Add(new MailboxAddress("Администрация сайта", Configuration["EmailSettings:EmailAddress"]));
             emailMessage.To.Add(new MailboxAddress("", email));
             emailMessage.Subject = subject;
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)
@@ -25,7 +31,7 @@ namespace NewsForum.Services
             using (var client = new SmtpClient())
             {
                 await client.ConnectAsync("smtp.gmail.com", 465, true);
-                await client.AuthenticateAsync("ighor.chaikin@gmail.com", "kifuiazvwvpqkxtm");
+                await client.AuthenticateAsync(Configuration["EmailSettings:EmailAddress"], Configuration["EmailSettings:DevicePassword"]);
                 await client.SendAsync(emailMessage);
 
                 await client.DisconnectAsync(true);

@@ -11,9 +11,11 @@ using NewsForum.Hubs;
 using Microsoft.AspNetCore.SignalR;
 using NewsForum.Models.AuthModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NewsForum.Controllers
 {
+    [Authorize]
     public class EditNewsController : Controller
     {
         private readonly IAllNews _allNews;
@@ -32,68 +34,55 @@ namespace NewsForum.Controllers
         [HttpGet]
         public ActionResult EditForm(int? Id = null)
         {
-            if (User.Identity.IsAuthenticated)
+            EditFormViewModel context = new EditFormViewModel
             {
-                EditFormViewModel context = new EditFormViewModel
-                {
-                    Categories = _allCategories.AllCategories.ToList(),
-                    News = (Id == null) ? null : _allNews.getObjectNews((int)Id)
-                };
-                return View(context);
-            }
-            return RedirectToAction("Login", "Register");
+                Categories = _allCategories.AllCategories.ToList(),
+                News = (Id == null) ? null : _allNews.getObjectNews((int)Id)
+            };
+            return View(context);
         }
         [HttpPost]
         public ActionResult EditForm(string title, string shortDescr, string img, string descr, string categoryId, string date, int? Id)
         {
-            if (User.Identity.IsAuthenticated)
+            int[] d = date.Split(new char[] { '-' }).Select(el => int.Parse(el)).ToArray();
+
+            News news = new News
             {
-                int[] d = date.Split(new char[] { '-' }).Select(el => int.Parse(el)).ToArray();
+                Title = title,
+                ShortDesc = shortDescr,
+                Img = img,
+                Desc = descr,
+                Category = _allCategories.getObjectCategory(int.Parse(categoryId)),
 
-                News news = new News
-                {
-                    Title = title,
-                    ShortDesc = shortDescr,
-                    Img = img,
-                    Desc = descr,
-                    Category = _allCategories.getObjectCategory(int.Parse(categoryId)),
-
-                    Date = new DateTime(d[0], d[1], d[2], d[3], d[4], d[5]).AddHours(
-                        -(
+                Date = new DateTime(d[0], d[1], d[2], d[3], d[4], d[5]).AddHours(
+                -(
                             _userManager
                             .FindByNameAsync(User.Identity.Name)
                             .Result.TimeZoneOffset
-                        )
-                    ),
+                )
+                ),
                     
-                    Author = User.Identity.IsAuthenticated ? User.Identity.Name : ""
-                };
-                if (Id == null)
+                Author = User.Identity.IsAuthenticated ? User.Identity.Name : ""
+            };
+            if (Id == null)
+            {
+                _allNews.addNews(news);
+            }
+            else /* DATE, IMG*/
+            {
+                if (User.Identity.Name == _allNews.getObjectNews((int)Id).Author)
                 {
-                    _allNews.addNews(news);
-                    return RedirectToAction("GetList", "NewsList");
-                }
-                else /* DATE, IMG*/
-                {
-                    if (User.Identity.Name == _allNews.getObjectNews((int)Id).Author)
-                    {
-                        _allNews.editNews((int)Id, news);
-                        return RedirectToAction("GetList", "NewsList");
-                    }
+                    _allNews.editNews((int)Id, news);
                 }
             }
-
-            return RedirectToAction("Login", "Register");
+            return RedirectToAction("GetList", "NewsList");
         }
         public ActionResult DeleteNews(int Id)
         {
-            if (User.Identity.IsAuthenticated)
+            if (User.Identity.Name == _allNews.getObjectNews(Id).Author)
             {
-                if (User.Identity.Name == _allNews.getObjectNews(Id).Author)
-                {
-                    _allNews.deleteNews(Id);
-                    return RedirectToAction("GetList", "NewsList");
-                }
+                _allNews.deleteNews(Id);
+                return RedirectToAction("GetList", "NewsList");
             }
             return RedirectToAction("Login", "Register");
         }
